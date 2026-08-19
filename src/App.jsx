@@ -1,6 +1,7 @@
-//mainly responsable for routing
+// mainly responsible for routing
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { EventDataProvider } from "./context/EventDataContext";
 
 import Home from "./pages/Home";
 import EventSetup from "./pages/EventSetup";
@@ -11,17 +12,19 @@ import Teams from "./pages/Teams";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/event/setup" element={<EventSetup />} />
-        <Route path="/matches" element={<Matches />} />
-        <Route path="/matches/:matchId" element={<Match />} />
-        <Route path="/anomalies" element={<Anomalies />} />
-        <Route path="/teams" element={<Teams />} />
-        <Route path="/teams/:teamNumber" element={<Teams />} />
-      </Routes>
-    </BrowserRouter>
+    <EventDataProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/event/setup" element={<EventSetup />} />
+          <Route path="/matches" element={<Matches />} />
+          <Route path="/matches/:matchId" element={<Match />} />
+          <Route path="/anomalies" element={<Anomalies />} />
+          <Route path="/teams" element={<Teams />} />
+          <Route path="/teams/:teamNumber" element={<Teams />} />
+        </Routes>
+      </BrowserRouter>
+    </EventDataProvider>
   );
 }
 

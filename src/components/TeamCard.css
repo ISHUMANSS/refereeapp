@@ -1,0 +1,54 @@
+.team-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 14px;
+  cursor: pointer;
+  transition: box-shadow 0.15s;
+  background: #fff;
+}
+
+.team-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.team-number {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.team-remove {
+  border: none;
+  background: transparent;
+  color: #999;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.team-name {
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.team-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.badge {
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.badge-clean {
+  color: #999;
+  font-size: 0.8rem;
+}
