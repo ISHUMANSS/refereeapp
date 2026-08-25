@@ -5,6 +5,7 @@ import { VIOLATION_TYPES } from "../data/sampleData";
 import TeamCard from "../components/TeamCard";
 import ViolationModal from "../components/ViolationModal";
 import "./Teams.css";
+import Header from "../components/Header";
 
 export default function Teams() {
   const { teamNumber } = useParams();
@@ -31,6 +32,7 @@ function TeamList() {
 
   return (
     <div className="teams-page">
+      <Header />
       <h1>Teams</h1>
 
       <form className="add-team-form" onSubmit={handleAddTeam}>
