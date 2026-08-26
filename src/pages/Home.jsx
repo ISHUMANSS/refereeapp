@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEventData } from "../context/EventDataContext";
 import "./Home.css";
+import Header from "../components/Header";
 
 const SECTIONS = [
   {
@@ -34,6 +35,7 @@ function Home() {
 
   return (
     <main className="home">
+      <Header />
       <h1>VEX Ref</h1>
       <p className="home-subtitle">
         Referee tools for VEX Robotics competitions.
