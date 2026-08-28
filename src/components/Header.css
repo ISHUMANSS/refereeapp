@@ -54,3 +54,12 @@
   color: #2563eb;
   border-bottom-color: #2563eb;
 }
+
+.nav-link-disabled {
+  color: #bbb;
+  cursor: not-allowed;
+}
+
+.nav-link-disabled:hover {
+  color: #bbb;
+}
