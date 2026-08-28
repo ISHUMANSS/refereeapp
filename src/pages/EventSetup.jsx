@@ -1,3 +1,6 @@
+//this is where i want to add the teams and change them and like inspect and such for a local event
+//also where you can select an event with the api
+
 import Header from "../components/Header";
 
 function EventSetup() {

@@ -1,3 +1,6 @@
+//list of teams and what voilations they have done
+//search / fuzzy search for teams to find them
+
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useEventData } from "../context/EventDataContext";

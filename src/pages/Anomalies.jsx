@@ -1,3 +1,6 @@
+//shows all of the recored anomalies for the event
+//like there are 50 sg11 and such that kinda info
+
 import Header from "../components/Header";
 
 function Anomalies() {

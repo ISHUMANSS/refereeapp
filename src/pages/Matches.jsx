@@ -1,3 +1,5 @@
+//only works for events using the api
+
 import Header from "../components/Header";
 
 function Matches() {
