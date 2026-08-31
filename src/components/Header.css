@@ -63,3 +63,8 @@
 .nav-link-disabled:hover {
   color: #bbb;
 }
+
+.event-name-empty {
+  color: #999;
+  font-style: italic;
+}

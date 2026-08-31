@@ -1,7 +1,10 @@
 import { getRule } from "../utils/rules";
+import { groupByRule } from "../utils/violations";
 import "./TeamCard.css";
 
 export default function TeamCard({ team, violations, onClick, onRemove }) {
+  const grouped = groupByRule(violations);
+
   return (
     <div className="team-card" onClick={onClick}>
       <div className="team-card-header">
@@ -18,24 +21,29 @@ export default function TeamCard({ team, violations, onClick, onRemove }) {
       </div>
       <div className="team-name">{team.name}</div>
       <div className="team-badges">
-        {violations.length === 0 && (
+        {grouped.length === 0 && (
           <span className="badge-clean">No violations</span>
         )}
-        {violations.slice(0, 4).map((v) => {
-          const rule = getRule(v.ruleCode);
+        {grouped.slice(0, 4).map((group) => {
+          const rule = getRule(group.ruleCode);
           return (
             <span
-              key={v.id}
-              className="badge"
+              key={group.ruleCode}
+              className={`badge ${group.hasMajor ? "badge-major" : ""}`}
               style={{ background: rule?.color || "#999" }}
-              title={`${v.ruleCode} (${v.severity})`}
+              title={`${group.ruleCode} — ${group.count} call${
+                group.count > 1 ? "s" : ""
+              }`}
             >
-              {v.ruleCode}
+              {group.ruleCode}
+              {group.count > 1 && (
+                <span className="badge-count">×{group.count}</span>
+              )}
             </span>
           );
         })}
-        {violations.length > 4 && (
-          <span className="badge-more">+{violations.length - 4}</span>
+        {grouped.length > 4 && (
+          <span className="badge-more">+{grouped.length - 4} more</span>
         )}
       </div>
     </div>

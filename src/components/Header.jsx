@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { useEventData } from "../context/EventDataContext";
 import "./Header.css";
 
 const NAV_LINKS = [
@@ -10,16 +11,20 @@ const NAV_LINKS = [
 ];
 
 function Header() {
+  const { event } = useEventData();
+
   return (
     <header className="header">
       <div className="header-top">
         <div>
           <span className="event-label">Current Event</span>
-          <h2>Demo VEX Event</h2>
+          <h2 className={!event ? "event-name-empty" : ""}>
+            {event ? event.name : "No Event Selected"}
+          </h2>
         </div>
-
+        {/*will show if a local event or a online event is currently sellected*/}
         <div className="header-right">
-          <span className="offline-status">● Offline</span>
+          <span className="offline-status">● Local</span>
         </div>
       </div>
 

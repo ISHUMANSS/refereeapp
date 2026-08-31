@@ -26,22 +26,67 @@
   gap: 8px;
 }
 
-.violation-list-item {
+.violation-group {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.violation-group-header {
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 10px;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  padding: 8px 12px;
+  padding: 10px 12px;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: 0.9rem;
 }
 
-.violation-time {
-  color: #999;
-  font-size: 0.8rem;
+.violation-group-header:hover {
+  background: #fafafa;
+}
+
+.violation-count {
+  font-weight: 700;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+.violation-group-breakdown {
+  display: flex;
+  gap: 6px;
+}
+
+.violation-expand-arrow {
   margin-left: auto;
+  color: #999;
+  font-size: 0.7rem;
 }
 
-.violation-list-item button {
+.violation-entry-list {
+  list-style: none;
+  padding: 8px 12px 10px 12px;
+  margin: 0;
+  background: #fafafa;
+  border-top: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.violation-entry {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+}
+
+.violation-entry button {
+  margin-left: auto;
   border: none;
   background: transparent;
   color: #999;

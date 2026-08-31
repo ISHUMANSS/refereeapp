@@ -58,3 +58,19 @@
   color: #999;
   align-self: center;
 }
+
+.badge-count {
+  margin-left: 3px;
+  font-weight: 800;
+  opacity: 0.9;
+}
+
+.badge-major {
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.35) inset;
+}
+
+.badge-more {
+  font-size: 0.75rem;
+  color: #999;
+  align-self: center;
+}
