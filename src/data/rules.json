@@ -1,0 +1,836 @@
+{
+  "manual": "VEX V5 Robotics Competition Override - Game Manual v1.1",
+  "note": "title/description fields must be filled in manually from your own copy of the official Game Manual \u2014 full rule text is not included here for copyright reasons.",
+  "categories": [
+    {
+      "id": "S",
+      "name": "Safety Rules",
+      "color": "#dc2626",
+      "rules": [
+        {
+          "code": "S1",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "S2",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "S3",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "S4",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "S5",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        }
+      ]
+    },
+    {
+      "id": "G",
+      "name": "General Rules",
+      "color": "#7c3aed",
+      "rules": [
+        {
+          "code": "G1",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "G2",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "G3",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "G4",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "G5",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "G6",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        }
+      ]
+    },
+    {
+      "id": "GG",
+      "name": "General Game Rules",
+      "color": "#2563eb",
+      "rules": [
+        {
+          "code": "GG1",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG2",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG3",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG4",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG4a",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG5",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG6",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG7",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG8",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG9",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG10",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG11",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG12",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG13",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG14",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG15",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG16",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG17",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG18",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        }
+      ]
+    },
+    {
+      "id": "SG",
+      "name": "Specific Game Rules",
+      "color": "#0891b2",
+      "rules": [
+        {
+          "code": "SG1",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "SG2",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "SG2a",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "SG3",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "SG4",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "SG5",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "SG6",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "SG7",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "SG7a",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "SG7e",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "SG8",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "SG8b",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "SG9",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "SG10",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "SG11",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "SG12",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "SG13",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        }
+      ]
+    },
+    {
+      "id": "R",
+      "name": "Robot Rules",
+      "color": "#ea580c",
+      "rules": [
+        {
+          "code": "R1",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R1a",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R1b",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R1c",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R2",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R2d",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R2e",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R3",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R3d",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R4",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R4a",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R4f",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R5",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R6",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R7",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R8",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R9",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R10",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R11",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R12",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R13",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R14",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R15",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R16",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R17",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R18",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R19",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R19c",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R19d",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R20",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R21",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R22",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R23",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R23a",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R23e",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R24",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R24f",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R25",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R25a",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R25b",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R25c",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R26",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R27",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "R28",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        }
+      ]
+    },
+    {
+      "id": "RSC",
+      "name": "Robot Skills Challenge Rules",
+      "color": "#65a30d",
+      "rules": [
+        {
+          "code": "RSC1",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "RSC2",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "RSC3",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "RSC3b",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "RSC4",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "RSC5",
+          "title": "",
+          "description": "",
+          "severity": "variable"
+        }
+      ]
+    },
+    {
+      "id": "SC",
+      "name": "Scoring Rules",
+      "color": "#4b5563",
+      "rules": [
+        {
+          "code": "SC1",
+          "title": "",
+          "description": "",
+          "severity": "minor"
+        },
+        {
+          "code": "SC2",
+          "title": "",
+          "description": "",
+          "severity": "minor"
+        },
+        {
+          "code": "SC3",
+          "title": "",
+          "description": "",
+          "severity": "minor"
+        },
+        {
+          "code": "SC4",
+          "title": "",
+          "description": "",
+          "severity": "minor"
+        },
+        {
+          "code": "SC5",
+          "title": "",
+          "description": "",
+          "severity": "minor"
+        },
+        {
+          "code": "SC6",
+          "title": "",
+          "description": "",
+          "severity": "minor"
+        },
+        {
+          "code": "SC7",
+          "title": "",
+          "description": "",
+          "severity": "minor"
+        },
+        {
+          "code": "SC8",
+          "title": "",
+          "description": "",
+          "severity": "minor"
+        }
+      ]
+    },
+    {
+      "id": "T",
+      "name": "Tournament Rules",
+      "color": "#c026d3",
+      "rules": [
+        {
+          "code": "T1",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "T2",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "T3",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "T4",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "T5",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "T6",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "T7",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "T8",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "T9",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "T10",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "T11",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "T12",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "T13",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "T14",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "T15",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "T16",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "T17",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "T18",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "T19",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "T20",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "T21",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "T22",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "T23",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "T24",
+          "title": "",
+          "description": "",
+          "severity": "major"
+        }
+      ]
+    }
+  ]
+}

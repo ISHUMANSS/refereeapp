@@ -5,8 +5,8 @@ const NAV_LINKS = [
   { to: "/", label: "Home", end: true, disabled: false },
   { to: "/matches", label: "Matches", disabled: true },
   { to: "/teams", label: "Teams", disabled: false },
-  { to: "/anomalies", label: "Anomalies", disabled: true },
-  { to: "/event/setup", label: "Event Setup", disabled: true },
+  { to: "/anomalies", label: "Anomalies", disabled: false },
+  { to: "/event/setup", label: "Event Setup", disabled: false },
 ];
 
 function Header() {

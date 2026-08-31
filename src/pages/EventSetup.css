@@ -1,0 +1,143 @@
+.setup-page {
+  padding: 20px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.setup-card {
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 20px;
+  background: #fff;
+}
+
+.setup-label {
+  display: block;
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.setup-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 14px;
+  box-sizing: border-box;
+}
+
+.setup-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.setup-btn {
+  padding: 10px 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f5f5f5;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.setup-btn-primary {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+  width: 100%;
+}
+
+.setup-btn-danger {
+  background: #fff;
+  border-color: #e04b4b;
+  color: #e04b4b;
+}
+
+.setup-btn-disabled {
+  width: 100%;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.setup-divider {
+  height: 1px;
+  background: #eee;
+  margin: 18px 0;
+}
+
+.setup-hint {
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 8px;
+}
+
+.setup-meta {
+  color: #999;
+  font-size: 0.85rem;
+  margin-top: -8px;
+}
+
+.setup-team-form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.setup-team-form .setup-input {
+  flex: 1;
+  min-width: 140px;
+  margin-bottom: 0;
+}
+
+.setup-team-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.setup-team-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+.setup-team-row button {
+  border: none;
+  background: transparent;
+  color: #e04b4b;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.setup-empty {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.setup-warning {
+  background: #fff5f5;
+  border: 1px solid #f0c0c0;
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.setup-warning p {
+  margin-top: 0;
+  font-size: 0.9rem;
+}
+
+.setup-warning-actions {
+  display: flex;
+  gap: 8px;
+}

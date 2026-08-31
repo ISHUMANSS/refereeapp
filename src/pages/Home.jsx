@@ -20,13 +20,13 @@ const SECTIONS = [
     to: "/anomalies",
     title: "Anomalies",
     description: "Full event-wide log of every violation recorded.",
-    disabled: true,
+    disabled: false,
   },
   {
     to: "/event/setup",
     title: "Event Setup",
     description: "Configure event details and import teams.",
-    disabled: true,
+    disabled: false,
   },
 ];
 

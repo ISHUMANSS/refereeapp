@@ -1,68 +1,66 @@
-//list of teams and what voilations they have done
-//search / fuzzy search for teams to find them
-
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useEventData } from "../context/EventDataContext";
-import { VIOLATION_TYPES } from "../data/sampleData";
+import { getRule } from "../utils/rules";
+import Header from "../components/Header";
 import TeamCard from "../components/TeamCard";
 import ViolationModal from "../components/ViolationModal";
 import "./Teams.css";
-import Header from "../components/Header";
 
 export default function Teams() {
   const { teamNumber } = useParams();
-  return teamNumber ? (
-    <TeamDetail teamNumber={teamNumber} />
-  ) : (
-    <TeamList />
+  return (
+    <main>
+      <Header />
+      {teamNumber ? <TeamDetail teamNumber={teamNumber} /> : <TeamList />}
+    </main>
   );
 }
 
 function TeamList() {
   const navigate = useNavigate();
-  const { teams, addTeam, removeTeam, violationsForTeam } = useEventData();
-  const [numberInput, setNumberInput] = useState("");
-  const [nameInput, setNameInput] = useState("");
+  const { teams, violationsForTeam } = useEventData();
+  const [search, setSearch] = useState("");
 
-  function handleAddTeam(e) {
-    e.preventDefault();
-    if (!numberInput.trim()) return;
-    addTeam(numberInput, nameInput);
-    setNumberInput("");
-    setNameInput("");
-  }
+  const query = search.trim().toLowerCase();
+  const filteredTeams = teams.filter(
+    (t) =>
+      !query ||
+      t.number.toLowerCase().includes(query) ||
+      t.name.toLowerCase().includes(query)
+  );
 
   return (
     <div className="teams-page">
-      <Header />
       <h1>Teams</h1>
 
-      <form className="add-team-form" onSubmit={handleAddTeam}>
-        <input
-          placeholder="Team number (e.g. 1234A)"
-          value={numberInput}
-          onChange={(e) => setNumberInput(e.target.value)}
-        />
-        <input
-          placeholder="Team name (optional)"
-          value={nameInput}
-          onChange={(e) => setNameInput(e.target.value)}
-        />
-        <button type="submit">Add Team</button>
-      </form>
+      <input
+        className="team-search"
+        placeholder="Search by team number or name…"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
 
-      <div className="team-grid">
-        {teams.map((team) => (
-          <TeamCard
-            key={team.id}
-            team={team}
-            violations={violationsForTeam(team.id)}
-            onClick={() => navigate(`/teams/${team.number}`)}
-            onRemove={removeTeam}
-          />
-        ))}
-      </div>
+      {teams.length === 0 ? (
+        <p className="teams-empty">
+          No teams yet — add teams from the Event Setup page.
+        </p>
+      ) : (
+        <div className="team-grid">
+          {filteredTeams.map((team) => (
+            <TeamCard
+              key={team.id}
+              team={team}
+              violations={violationsForTeam(team.id)}
+              onClick={() => navigate(`/teams/${team.number}`)}
+              onRemove={() => {}}
+            />
+          ))}
+          {filteredTeams.length === 0 && (
+            <p className="teams-empty">No teams match "{search}".</p>
+          )}
+        </div>
+      )}
     </div>
   );
 }
@@ -85,9 +83,11 @@ function TeamDetail({ teamNumber }) {
   }
 
   const violations = violationsForTeam(team.id);
+  const majorCount = violations.filter((v) => v.severity === "major").length;
+  const minorCount = violations.filter((v) => v.severity === "minor").length;
 
-  function handleSelect(typeId) {
-    addViolation(team.id, typeId, "");
+  function handleSelect(ruleCode, severity, note) {
+    addViolation(team.id, ruleCode, severity, note);
     setModalOpen(false);
   }
 
@@ -100,6 +100,12 @@ function TeamDetail({ teamNumber }) {
         {team.number} — {team.name}
       </h1>
 
+      <div className="team-detail-stats">
+        <span className="stat-pill stat-total">{violations.length} total</span>
+        <span className="stat-pill stat-minor">{minorCount} minor</span>
+        <span className="stat-pill stat-major">{majorCount} major</span>
+      </div>
+
       <button className="assign-btn" onClick={() => setModalOpen(true)}>
         Assign Violation
       </button>
@@ -108,12 +114,19 @@ function TeamDetail({ teamNumber }) {
       {violations.length === 0 && <p>No violations recorded.</p>}
       <ul className="violation-list">
         {violations.map((v) => {
-          const type = VIOLATION_TYPES.find((t) => t.id === v.type);
+          const rule = getRule(v.ruleCode);
           return (
             <li key={v.id} className="violation-list-item">
-              <span className="badge" style={{ background: type?.color }}>
-                {type?.label}
+              <span
+                className="badge"
+                style={{ background: rule?.color || "#999" }}
+              >
+                {v.ruleCode}
               </span>
+              <span className={`severity-tag severity-tag-${v.severity}`}>
+                {v.severity}
+              </span>
+              {v.note && <span className="violation-note">{v.note}</span>}
               <span className="violation-time">
                 {new Date(v.timestamp).toLocaleTimeString()}
               </span>

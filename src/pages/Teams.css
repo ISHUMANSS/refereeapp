@@ -47,3 +47,68 @@
   color: #999;
   cursor: pointer;
 }
+
+.team-search {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+}
+
+.teams-empty {
+  color: #999;
+}
+
+.team-detail-stats {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.stat-pill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.stat-total {
+  background: #eee;
+  color: #555;
+}
+
+.stat-minor {
+  background: #fdf0dc;
+  color: #b26a00;
+}
+
+.stat-major {
+  background: #fbe3e3;
+  color: #c02c2c;
+}
+
+.severity-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.severity-tag-minor {
+  background: #fdf0dc;
+  color: #b26a00;
+}
+
+.severity-tag-major {
+  background: #fbe3e3;
+  color: #c02c2c;
+}
+
+.violation-note {
+  color: #666;
+  font-size: 0.85rem;
+  font-style: italic;
+}

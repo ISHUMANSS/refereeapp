@@ -1,0 +1,52 @@
+.anomalies-page {
+  padding: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.anomalies-subtitle {
+  color: #666;
+  margin-top: -8px;
+}
+
+.anomaly-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.anomaly-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.anomaly-rank {
+  color: #bbb;
+  font-weight: 700;
+  width: 28px;
+}
+
+.anomaly-badge {
+  min-width: 40px;
+  text-align: center;
+}
+
+.anomaly-title {
+  flex: 1;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+.anomaly-breakdown {
+  display: flex;
+  gap: 6px;
+}
+
+.anomaly-count {
+  font-weight: 700;
+  color: #2563eb;
+}
