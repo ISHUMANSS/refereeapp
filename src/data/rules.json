@@ -1,44 +1,8 @@
 {
-  "manual": "VEX V5 Robotics Competition Override - Game Manual v1.1",
+  "manual": "VEX V5 Robotics Competition Override - Game Manual v2.0",
   "note": "Need to be filled in by you.",
   "categories": [
-    {
-      "id": "S",
-      "name": "Safety Rules",
-      "color": "#dc2626",
-      "rules": [
-        {
-          "code": "S1",
-          "title": "",
-          "description": "",
-          "severity": "major"
-        },
-        {
-          "code": "S2",
-          "title": "",
-          "description": "",
-          "severity": "major"
-        },
-        {
-          "code": "S3",
-          "title": "",
-          "description": "",
-          "severity": "major"
-        },
-        {
-          "code": "S4",
-          "title": "",
-          "description": "",
-          "severity": "major"
-        },
-        {
-          "code": "S5",
-          "title": "",
-          "description": "",
-          "severity": "major"
-        }
-      ]
-    },
+    
     {
       "id": "G",
       "name": "General Rules",
@@ -46,40 +10,35 @@
       "rules": [
         {
           "code": "G1",
-          "title": "",
+          "title": "Participants must follow the Code of Conduct",
           "description": "",
           "severity": "variable"
         },
         {
           "code": "G2",
-          "title": "",
+          "title": "Participants must follow the Student Centered Policy",
           "description": "",
           "severity": "variable"
         },
         {
           "code": "G3",
-          "title": "",
+          "title": "Use common sense",
           "description": "",
           "severity": "variable"
         },
         {
           "code": "G4",
-          "title": "",
+          "title": "Students must meet the Student Eligibility Policy requirements",
           "description": "",
           "severity": "variable"
         },
         {
           "code": "G5",
-          "title": "",
-          "description": "",
-          "severity": "variable"
-        },
-        {
-          "code": "G6",
-          "title": "",
-          "description": "",
+          "title": "There is a difference between accidentally and willfully violating a Robot rule",
+          "description": "A Team that circumvents a Robot rule for a competitive advantage should receive an immediate Disqualification for the current Match",
           "severity": "variable"
         }
+        
       ]
     },
     {
@@ -89,91 +48,85 @@
       "rules": [
         {
           "code": "GG1",
-          "title": "",
-          "description": "",
+          "title": "Only Drive Team Members, and only in the Alliance Station",
+          "description": "Only up to 3 drive team members, No communication devices",
           "severity": "variable"
         },
         {
           "code": "GG2",
-          "title": "",
-          "description": "",
+          "title": "A Teams Robot should attend every Match",
+          "description": "No robot will mean a NO SHOW",
           "severity": "variable"
         },
         {
           "code": "GG3",
-          "title": "",
-          "description": "",
+          "title": "Robots on the Field must be ready to play",
+          "description": "battery charged, sized within the starting size constraint, includes only the correct Alliance-color license plates, etc",
           "severity": "variable"
         },
         {
           "code": "GG4",
-          "title": "",
-          "description": "",
-          "severity": "variable"
-        },
-        {
-          "code": "GG4a",
-          "title": "",
-          "description": "",
+          "title": " Hands out of the Field",
+          "description": "(SG11 for match loading disrupts this rule)",
           "severity": "variable"
         },
         {
           "code": "GG5",
-          "title": "",
-          "description": "",
+          "title": "Match replays are allowed, but rare",
+          "description": "Match affecting feild issues",
           "severity": "variable"
         },
         {
           "code": "GG6",
-          "title": "",
+          "title": "Disqualifications",
           "description": "",
           "severity": "variable"
         },
         {
           "code": "GG7",
-          "title": "",
-          "description": "",
+          "title": "Time-outs",
+          "description": "Used in elimination",
           "severity": "variable"
         },
         {
           "code": "GG8",
-          "title": "",
-          "description": "",
-          "severity": "variable"
+          "title": "Keep your Robots together",
+          "description": "Robots may not intentionally detach parts during the Match or leave mechanisms on the Field.",
+          "severity": "minor"
         },
         {
           "code": "GG9",
-          "title": "",
+          "title": "Don’t hook your Robot to the Field, and don’t get Entangled",
           "description": "",
           "severity": "variable"
         },
         {
           "code": "GG10",
-          "title": "",
+          "title": "The red Alliance may choose to place last",
           "description": "",
           "severity": "variable"
         },
         {
           "code": "GG11",
-          "title": "",
+          "title": "Controllers must stay connected to the Field",
           "description": "",
           "severity": "variable"
         },
         {
           "code": "GG12",
-          "title": "",
+          "title": "Autonomous means no humans",
           "description": "",
           "severity": "variable"
         },
         {
           "code": "GG13",
-          "title": "",
-          "description": "",
+          "title": "All rules still apply in the Autonomous Period",
+          "description": "Breaking a rules results in a loss of the auton",
           "severity": "variable"
         },
         {
           "code": "GG14",
-          "title": "",
+          "title": "Don’t destroy other Robots. But, be prepared to encounter defense",
           "description": "",
           "severity": "variable"
         },
@@ -309,6 +262,43 @@
           "title": "",
           "description": "",
           "severity": "variable"
+        }
+      ]
+    },
+    {
+      "id": "S",
+      "name": "Safety Rules",
+      "color": "#dc2626",
+      "rules": [
+        {
+          "code": "S1",
+          "title": "Be safe out there",
+          "description": "If at any time the Robot operation or Team actions are deemed unsafe or have damaged a Field Element, Scoring Object, or the Field, the offending Team may receive a Disablement and/or Disqualification at the discretion of the Head Referee. The Robot will require re-inspection as described in rul <R2> before it may take the Field again.",
+          "severity": "major"
+        },
+        {
+          "code": "S2",
+          "title": "Students must be accompanied by an Adult",
+          "description": "Every Student at a VEX Robotics Competition event must be supervised by a responsible Adult. The Adult must obey all rules and be careful to not violate Student-centered policies, but must be present for the full duration of the event in the case of an emergency. Violations of this rule may result in removal from the event and additional penalties",
+          "severity": "major"
+        },
+        {
+          "code": "S3",
+          "title": "Each Student Team member must have a completed participant release form on file for the event and season. ",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "S4",
+          "title": "Stay inside the Field",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "S5",
+          "title": "Wear safety glasses",
+          "description": "",
+          "severity": "major"
         }
       ]
     },
