@@ -1,0 +1,17 @@
+Need to do:
+
+Add:
+- Inspection (on the event set up page or somthing also shows on the teams page if they have been inspected)
+- 
+
+Fix / change:
+- Teams page
+- Phone screen based
+- Dark mode and light mode
+- Make it so teams are ordered by number 
+- Overall UI changes and improvements
+
+
+
+Want to add:
+- Vex events API (will allow matches and loading teams for the event)
