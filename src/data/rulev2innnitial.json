@@ -1,0 +1,283 @@
+{
+  "manual": "VEX V5 Robotics Competition Override - Game Manual v2.0",
+  "note": "Need to be filled in by you for each version of the game manual.",
+  "categories": [
+    {
+      "id": "SG",
+      "name": "Specific Game Rules",
+      "color": "#0891b2",
+      "rules": [
+        {
+          "code": "SG1",
+          "title": "Starting a Match",
+          "description": "less then 18”, not contacting objects, tocuhing the wall, in its own quadrant, and stationary",
+          "severity": "variable"
+        },
+        {
+          "code": "SG2",
+          "title": "Horizontal expansion is limited",
+          "description": "must fit within a 24” x 24” square horizontal footprint",
+          "severity": "variable"
+        },
+        {
+          "code": "SG3",
+          "title": "Vertical expansion is limited.",
+          "description": "no part of the Robot may exceed an overall height of 50”",
+          "severity": "variable"
+        },
+        {
+          "code": "SG4",
+          "title": "Keep Scoring Objects in the Field",
+          "description": "minor but if it keeps happening it escalates",
+          "severity": "variable"
+        },
+        {
+          "code": "SG5",
+          "title": "Preload",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "SG6",
+          "title": "Possession is limited to a maximum of one Pin and one Cup",
+          "description": "Ponsidered Possessed by a Robot if the Scoring Object is fully supported by the Robot, or if the Robot’s movement in all directions would result in maintained control of the Scoring Object",
+          "severity": "variable"
+        },
+        {
+          "code": "SG7",
+          "title": "Don’t cross the Autonomous Line",
+          "description": "contact with either a robot or scoring object on the opponents side gives winpoint",
+          "severity": "variable"
+        },
+        {
+          "code": "SG8",
+          "title": "Midfield and auton line",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "SG9",
+          "title": "Alliance Goals are protected.",
+          "description": "The alliance may knock over their own goals, Making contact with the Goal or with Scoring Objects stacked on the Goal, Adding or removing Placed Scoring Objects, Strategically covering the Goal, Pushing an opposing Robot into Scoring Objects stacked in their own Alliance-colored Goal, knocking some or all of them out of the Goal",
+          "severity": "variable"
+        },
+        {
+          "code": "SG10",
+          "title": "Placed Scoring Objects may not be removed from neutral Goals",
+          "description": "Worth 10 points for the first 3 pins, worth 50 points with an interaction removing 4+",
+          "severity": "variable"
+        },
+        {
+          "code": "SG11",
+          "title": "Match Loads",
+          "description": "Only one at a time (pin and cup), may have momentary contact with human and load and robot and load, after let go can not be grabed again",
+          "severity": "variable"
+        },
+        {
+          "code": "SG12",
+          "title": "Endgame period",
+          "description": "Last 10 seconds no scoreing on the mid goal, Holding is allowed",
+          "severity": "variable"
+        },
+        {
+          "code": "SG13",
+          "title": "Load Zones are protected",
+          "description": "May not enter, may not stop or interact with the opponents",
+          "severity": "variable"
+        }
+      ]
+    },
+    {
+      "id": "GG",
+      "name": "General Game Rules",
+      "color": "#2563eb",
+      "rules": [
+        {
+          "code": "GG1",
+          "title": "Only Drive Team Members, and only in the Alliance Station",
+          "description": "Only up to 3 drive team members, No communication devices",
+          "severity": "variable"
+        },
+        {
+          "code": "GG2",
+          "title": "A Teams Robot should attend every Match",
+          "description": "No robot will mean a NO SHOW",
+          "severity": "variable"
+        },
+        {
+          "code": "GG3",
+          "title": "Robots on the Field must be ready to play",
+          "description": "battery charged, sized within the starting size constraint, includes only the correct Alliance-color license plates, etc",
+          "severity": "variable"
+        },
+        {
+          "code": "GG4",
+          "title": " Hands out of the Field",
+          "description": "(SG11 for match loading disrupts this rule)",
+          "severity": "variable"
+        },
+        {
+          "code": "GG5",
+          "title": "Match replays are allowed, but rare",
+          "description": "Match affecting feild issues",
+          "severity": "variable"
+        },
+        {
+          "code": "GG6",
+          "title": "Disqualifications",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG7",
+          "title": "Time-outs",
+          "description": "Used in elimination",
+          "severity": "variable"
+        },
+        {
+          "code": "GG8",
+          "title": "Keep your Robots together",
+          "description": "Robots may not intentionally detach parts during the Match or leave mechanisms on the Field.",
+          "severity": "minor"
+        },
+        {
+          "code": "GG9",
+          "title": "Don’t hook your Robot to the Field, and don’t get Entangled",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG10",
+          "title": "The red Alliance may choose to place last",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG11",
+          "title": "Controllers must stay connected to the Field",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG12",
+          "title": "Autonomous means no humans",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG13",
+          "title": "All rules still apply in the Autonomous Period",
+          "description": "Breaking a rules results in a loss of the auton",
+          "severity": "variable"
+        },
+        {
+          "code": "GG14",
+          "title": "Don’t destroy other Robots. But, be prepared to encounter defense",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG15",
+          "title": "Offensive Robots get the “benefit of the doubt“",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "GG16",
+          "title": "You can’t force an opponent into a penalty",
+          "description": "SG9 goes to a minor when forcing an opponent into a major",
+          "severity": "minor"
+        },
+        {
+          "code": "GG17",
+          "title": "No Holding for more than a 3-count",
+          "description": "Holding = trappping, lifting, pinning",
+          "severity": "variable"
+        },
+        {
+          "code": "GG18",
+          "title": "Use Scoring Objects to play the game",
+          "description": "don't use them as a glove",
+          "severity": "variable"
+        }
+      ]
+    },
+    
+    {
+      "id": "G",
+      "name": "General Rules",
+      "color": "#7c3aed",
+      "rules": [
+        {
+          "code": "G1",
+          "title": "Participants must follow the Code of Conduct",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "G2",
+          "title": "Participants must follow the Student Centered Policy",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "G3",
+          "title": "Use common sense",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "G4",
+          "title": "Students must meet the Student Eligibility Policy requirements",
+          "description": "",
+          "severity": "variable"
+        },
+        {
+          "code": "G5",
+          "title": "There is a difference between accidentally and willfully violating a Robot rule",
+          "description": "A Team that circumvents a Robot rule for a competitive advantage should receive an immediate Disqualification for the current Match",
+          "severity": "variable"
+        }
+        
+      ]
+    },
+    
+    {
+      "id": "S",
+      "name": "Safety Rules",
+      "color": "#dc2626",
+      "rules": [
+        {
+          "code": "S1",
+          "title": "Be safe out there",
+          "description": "If at any time the Robot operation or Team actions are deemed unsafe or have damaged a Field Element, Scoring Object, or the Field, the offending Team may receive a Disablement and/or Disqualification at the discretion of the Head Referee. The Robot will require re-inspection as described in rul <R2> before it may take the Field again.",
+          "severity": "major"
+        },
+        {
+          "code": "S2",
+          "title": "Students must be accompanied by an Adult",
+          "description": "Every Student at a VEX Robotics Competition event must be supervised by a responsible Adult. The Adult must obey all rules and be careful to not violate Student-centered policies, but must be present for the full duration of the event in the case of an emergency. Violations of this rule may result in removal from the event and additional penalties",
+          "severity": "major"
+        },
+        {
+          "code": "S3",
+          "title": "Each Student Team member must have a completed participant release form on file for the event and season. ",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "S4",
+          "title": "Stay inside the Field",
+          "description": "",
+          "severity": "major"
+        },
+        {
+          "code": "S5",
+          "title": "Wear safety glasses",
+          "description": "",
+          "severity": "major"
+        }
+      ]
+    }
+  ]
+}

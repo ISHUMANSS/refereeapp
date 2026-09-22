@@ -30,10 +30,11 @@
 .rule-list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  max-height: 340px;
+  gap: 16px;
+  max-height: 420px;
   overflow-y: auto;
   margin-bottom: 12px;
+  padding-right: 4px;
 }
 
 .rule-category-label {
@@ -44,34 +45,79 @@
   margin-bottom: 6px;
 }
 
-.rule-chip-row {
+.rule-chip-column {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 6px;
 }
 
-.rule-chip {
-  border: 1.5px solid;
-  background: transparent;
-  border-radius: 999px;
-  padding: 5px 10px;
-  font-size: 0.8rem;
-  cursor: pointer;
+.rule-item {
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.rule-chip:hover {
-  filter: brightness(0.95);
+.rule-chip-row-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid;
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+.rule-chip-row-btn:hover {
+  background: #fafafa;
+}
+
+.rule-chip-code {
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.rule-chip-short {
+  flex: 1;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.rule-chip-arrow {
+  color: #bbb;
+  font-size: 0.65rem;
+}
+
+.rule-detail {
+  padding: 10px 12px 12px;
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+}
+
+.rule-detail-title {
+  font-weight: 700;
+  margin: 0 0 6px;
+  font-size: 0.9rem;
+}
+
+.rule-detail-desc {
+  color: #555;
+  font-size: 0.85rem;
+  margin: 0 0 10px;
+  line-height: 1.4;
 }
 
 .rule-empty {
   color: #999;
   font-size: 0.9rem;
-}
-
-.severity-selected-rule {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 12px;
 }
 
 .modal-note {
@@ -80,24 +126,28 @@
   border-radius: 6px;
   padding: 8px;
   box-sizing: border-box;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
   font-family: inherit;
 }
 
 .severity-buttons {
   display: flex;
   gap: 10px;
-  margin-bottom: 12px;
 }
 
 .severity-btn {
   flex: 1;
-  padding: 12px;
+  padding: 10px;
   border: none;
   border-radius: 8px;
   font-weight: 700;
   cursor: pointer;
   color: #fff;
+}
+
+.severity-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .severity-minor {

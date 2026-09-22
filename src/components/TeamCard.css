@@ -44,8 +44,11 @@
 .badge {
   color: #fff;
   font-size: 0.75rem;
-  padding: 3px 8px;
+  padding: 2px 8px;
   border-radius: 999px;
+  border: 2px solid transparent;
+  display: inline-flex;
+  align-items: center;
 }
 
 .badge-clean {
@@ -53,20 +56,16 @@
   font-size: 0.8rem;
 }
 
-.badge-more {
-  font-size: 0.75rem;
-  color: #999;
-  align-self: center;
+.badge-major {
+  border: 3px solid #e94a4a;
+  font-weight: 700;
+  padding: 1px 7px; /* compensate thicker border so size stays consistent */
 }
 
 .badge-count {
   margin-left: 3px;
   font-weight: 800;
   opacity: 0.9;
-}
-
-.badge-major {
-  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.35) inset;
 }
 
 .badge-more {
