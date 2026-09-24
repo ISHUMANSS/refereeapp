@@ -1,7 +1,7 @@
 Need to do:
 
 Add:
-- Inspection (on the event set up page or somthing also shows on the teams page if they have been inspected)
+- 
 - 
 
 Fix / change:

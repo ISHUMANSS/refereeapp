@@ -25,12 +25,19 @@ function TeamList() {
   const [search, setSearch] = useState("");
 
   const query = search.trim().toLowerCase();
-  const filteredTeams = teams.filter(
-    (t) =>
-      !query ||
-      t.number.toLowerCase().includes(query) ||
-      t.name.toLowerCase().includes(query)
-  );
+  const filteredTeams = teams
+    .filter(
+      (t) =>
+        !query ||
+        t.number.toLowerCase().includes(query) ||
+        t.name.toLowerCase().includes(query)
+    )
+    .sort((a, b) =>
+      a.number.localeCompare(b.number, undefined, {
+        numeric: true,
+        sensitivity: "base",
+      })
+    );
 
   return (
     <div className="teams-page">
@@ -67,7 +74,6 @@ function TeamList() {
     </div>
   );
 }
-
 // Groups a team's violations by ruleCode, most-recently-broken rule first,
 // and within each group, most recent entry first.
 function groupByRule(violations) {
