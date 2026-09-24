@@ -2,36 +2,36 @@ import { getRule } from "../utils/rules";
 import { groupByRule } from "../utils/violations";
 import "./TeamCard.css";
 
+//changes the 
+function getStatus(inspection, grouped) {
+  if (inspection && !inspection.passed) return "status-alert";
+  if (grouped.some((g) => g.hasMajor)) return "status-alert";
+  if (grouped.length > 0) return "status-warn";
+  return "status-clean";
+}
+
 export default function TeamCard({ team, violations, inspection, onClick, onRemove }) {
   const grouped = groupByRule(violations);
+  const status = getStatus(inspection, grouped);
 
   return (
-    <div className="team-card" onClick={onClick}>
+    <div className={`team-card ${status}`} onClick={onClick}>
       <div className="team-card-header">
-        <span className="team-number">
-          {team.number}
-          {inspection && (
-            <span
-              className={`inspected-badge ${
-                inspection.passed ? "" : "inspected-badge-fail"
-              }`}
-              title={inspection.passed ? "Passed inspection" : "Failed inspection"}
-            >
-              {inspection.passed ? "✓ Inspected" : "✕ Failed Inspection"}
-            </span>
-          )}
-        </span>
-        <button
-          className="team-remove"
-          onClick={(e) => {
-            e.stopPropagation();
-            onRemove(team.id);
-          }}
-        >
-          ✕
-        </button>
+        <span className="team-number">{team.number}</span>
+        {inspection && (
+          <span
+            className={`inspected-badge ${
+              inspection.passed ? "" : "inspected-badge-fail"
+            }`}
+            title={inspection.passed ? "Passed inspection" : "Failed inspection"}
+          >
+            {inspection.passed ? "✓ Inspected" : "✕ Failed"}
+          </span>
+        )}
       </div>
+
       <div className="team-name">{team.name}</div>
+
       <div className="team-badges">
         {grouped.length === 0 && (
           <span className="badge-clean">No violations</span>

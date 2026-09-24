@@ -1,96 +1,19 @@
+/* ---------- Shared page ---------- */
+
+.teams-page {
+  padding: 20px;
+  
+  margin: 0 auto;
+}
+
 .back-link {
   background: none;
   border: none;
   color: #2563eb;
   cursor: pointer;
   padding: 0;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   font-size: 0.9rem;
-}
-
-.assign-btn {
-  padding: 10px 18px;
-  border: none;
-  background: #2563eb;
-  color: #fff;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-bottom: 20px;
-}
-
-.violation-list {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.violation-group {
-  border: 1px solid #eee;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.violation-group-header {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  background: #fff;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  font-family: inherit;
-  font-size: 0.9rem;
-}
-
-.violation-group-header:hover {
-  background: #fafafa;
-}
-
-.violation-count {
-  font-weight: 700;
-  color: #444;
-  font-size: 0.9rem;
-}
-
-.violation-group-breakdown {
-  display: flex;
-  gap: 6px;
-}
-
-.violation-expand-arrow {
-  margin-left: auto;
-  color: #999;
-  font-size: 0.7rem;
-}
-
-.violation-entry-list {
-  list-style: none;
-  padding: 8px 12px 10px 12px;
-  margin: 0;
-  background: #fafafa;
-  border-top: 1px solid #eee;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.violation-entry {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.85rem;
-}
-
-.violation-entry button {
-  margin-left: auto;
-  border: none;
-  background: transparent;
-  color: #999;
-  cursor: pointer;
 }
 
 .team-search {
@@ -106,21 +29,49 @@
   color: #999;
 }
 
+/* ---------- Detail header ---------- */
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.detail-team-number {
+  font-family: "SF Mono", "Roboto Mono", ui-monospace, Menlo, monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+.detail-team-name {
+  color: #777;
+  margin: 2px 0 0;
+  font-size: 0.95rem;
+}
+
 .team-detail-stats {
   display: flex;
   gap: 8px;
-  margin-bottom: 16px;
+  flex-wrap: wrap;
 }
 
 .stat-pill {
-  padding: 4px 10px;
+  padding: 5px 11px;
   border-radius: 999px;
   font-size: 0.8rem;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .stat-total {
-  background: #eee;
+  background: #f0f0f0;
   color: #555;
 }
 
@@ -134,12 +85,133 @@
   color: #c02c2c;
 }
 
+/* ---------- Sections ---------- */
+
+.detail-section {
+  border-top: 1px solid #ececec;
+  padding-top: 18px;
+  margin-bottom: 24px;
+}
+
+.detail-section-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #999;
+  margin: 0 0 12px;
+}
+
+.detail-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 10px;
+}
+
+.detail-section-header .detail-section-title {
+  margin: 0;
+}
+
+.detail-empty {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.assign-btn {
+  padding: 8px 16px;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.assign-btn:hover {
+  background: #1d4ed8;
+}
+
+/* ---------- Violation list ---------- */
+
+.violation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.violation-list-item {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto auto;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 0.85rem;
+}
+
+.violation-note-wrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.violation-note {
+  color: #666;
+  font-style: italic;
+}
+
+.violation-note-empty {
+  color: #ddd;
+}
+
+.violation-time {
+  color: #999;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.violation-remove {
+  border: none;
+  background: transparent;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 2px 4px;
+  line-height: 1;
+}
+
+.violation-remove:hover {
+  color: #e04b4b;
+}
+
+/* ---------- Badges & tags (shared with TeamCard) ---------- */
+
+.badge {
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
 .severity-tag {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
   padding: 2px 6px;
   border-radius: 4px;
+  white-space: nowrap;
 }
 
 .severity-tag-minor {
@@ -150,10 +222,4 @@
 .severity-tag-major {
   background: #fbe3e3;
   color: #c02c2c;
-}
-
-.violation-note {
-  color: #666;
-  font-size: 0.85rem;
-  font-style: italic;
 }

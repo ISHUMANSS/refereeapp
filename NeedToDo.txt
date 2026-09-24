@@ -1,15 +1,13 @@
 Need to do:
 
 Add:
-- 
+- An specific site colour
+- Overall UI changes and improvements
 - 
 
 Fix / change:
-- Teams page
 - Phone screen based
 - Dark mode and light mode
-- Make it so teams are ordered by number 
-- Overall UI changes and improvements
 
 
 

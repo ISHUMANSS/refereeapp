@@ -1,65 +1,89 @@
 .team-card {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 14px;
+  position: relative;
+  border: 1px solid #e8e8e8;
+  border-left: 4px solid #ccc;
+  border-radius: 8px;
+  padding: 14px 16px;
   cursor: pointer;
-  transition: box-shadow 0.15s;
   background: #fff;
+  transition: border-color 0.12s, transform 0.08s;
 }
 
 .team-card:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-color: #d5d5d5;
+}
+
+.team-card:active {
+  transform: scale(0.985);
+}
+
+/* Status stripe — read the team's state before reading anything else */
+.team-card.status-clean {
+  border-left-color: #22c55e;
+}
+
+.team-card.status-warn {
+  border-left-color: #f5a623;
+}
+
+.team-card.status-alert {
+  border-left-color: #dc2626;
 }
 
 .team-card-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 2px;
 }
 
 .team-number {
+  font-family: "SF Mono", "Roboto Mono", ui-monospace, Menlo, monospace;
   font-weight: 700;
-  font-size: 1.1rem;
-}
-
-.team-remove {
-  border: none;
-  background: transparent;
-  color: #999;
-  cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.05rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+  color: #1a1a1a;
 }
 
 .team-name {
-  color: #555;
-  margin-bottom: 8px;
+  color: #6b6b6b;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .team-badges {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 5px;
+  min-height: 22px;
 }
 
 .badge {
   color: #fff;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 600;
   padding: 2px 8px;
-  border-radius: 999px;
+  border-radius: 5px;
   border: 2px solid transparent;
   display: inline-flex;
   align-items: center;
+  line-height: 1.5;
 }
 
 .badge-clean {
-  color: #999;
-  font-size: 0.8rem;
+  color: #b5b5b5;
+  font-size: 0.78rem;
 }
 
 .badge-major {
-  border: 3px solid #e94a4a;
+  border-color: #7f1d1d;
   font-weight: 700;
-  padding: 1px 7px; /* compensate thicker border so size stays consistent */
+  padding: 0px 6px; /* compensate thicker border so size stays consistent */
 }
 
 .badge-count {
@@ -69,24 +93,22 @@
 }
 
 .badge-more {
-  font-size: 0.75rem;
-  color: #999;
+  font-size: 0.72rem;
+  color: #b5b5b5;
   align-self: center;
 }
 
 .inspected-badge {
-  display: inline-block;
-  margin-left: 8px;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
   color: #15803d;
-  background: #dcfce7;
+  background: #ecfdf3;
   padding: 2px 7px;
-  border-radius: 999px;
-  vertical-align: middle;
+  border-radius: 5px;
+  white-space: nowrap;
 }
 
 .inspected-badge-fail {
-  color: #c02c2c;
-  background: #fbe3e3;
+  color: #b91c1c;
+  background: #fef2f2;
 }

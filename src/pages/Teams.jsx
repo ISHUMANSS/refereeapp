@@ -130,52 +130,76 @@ function TeamDetail({ teamNumber }) {
       <button className="back-link" onClick={() => navigate("/teams")}>
         ← Back to Teams
       </button>
-      <h1>
-        {team.number} — {team.name}
-      </h1>
 
-      <div className="team-detail-stats">
-        <span className="stat-pill stat-total">{violations.length} total</span>
-        <span className="stat-pill stat-minor">{minorCount} minor</span>
-        <span className="stat-pill stat-major">{majorCount} major</span>
+      <div className="detail-header">
+        <div>
+          <h1 className="detail-team-number">{team.number}</h1>
+          {team.name && <p className="detail-team-name">{team.name}</p>}
+        </div>
+        <div className="team-detail-stats">
+          <span className="stat-pill stat-total">{violations.length} total</span>
+          <span className="stat-pill stat-minor">{minorCount} minor</span>
+          <span className="stat-pill stat-major">{majorCount} major</span>
+        </div>
       </div>
 
-      <h2>Inspection</h2>
-      <InspectionPanel
-        teamId={team.id}
-        inspection={inspectionForTeam(team.id)}
-        onSetInspection={setInspection}
-      />
+      <section className="detail-section">
+        <h2 className="detail-section-title">Inspection</h2>
+        <InspectionPanel
+          teamId={team.id}
+          inspection={inspectionForTeam(team.id)}
+          onSetInspection={setInspection}
+        />
+      </section>
 
-      <h2 style={{ marginTop: 20 }}>Violation Log</h2>
-      <button className="assign-btn" onClick={() => setModalOpen(true)}>
-        Assign Violation
-      </button>
+      <section className="detail-section">
+        <div className="detail-section-header">
+          <h2 className="detail-section-title">Violation Log</h2>
+          <button className="assign-btn" onClick={() => setModalOpen(true)}>
+            Assign Violation
+          </button>
+        </div>
 
-      {violations.length === 0 && <p>No violations recorded.</p>}
-      <ul className="violation-list">
-        {violations.map((v) => {
-          const rule = getRule(v.ruleCode);
-          return (
-            <li key={v.id} className="violation-list-item">
-              <span
-                className="badge"
-                style={{ background: rule?.color || "#999" }}
-              >
-                {v.ruleCode}
-              </span>
-              <span className={`severity-tag severity-tag-${v.severity}`}>
-                {v.severity}
-              </span>
-              {v.note && <span className="violation-note">{v.note}</span>}
-              <span className="violation-time">
-                {new Date(v.timestamp).toLocaleTimeString()}
-              </span>
-              <button onClick={() => removeViolation(v.id)}>✕</button>
-            </li>
-          );
-        })}
-      </ul>
+        {violations.length === 0 ? (
+          <p className="detail-empty">No violations recorded.</p>
+        ) : (
+          <ul className="violation-list">
+            {violations.map((v) => {
+              const rule = getRule(v.ruleCode);
+              return (
+                <li key={v.id} className="violation-list-item">
+                  <span
+                    className="badge"
+                    style={{ background: rule?.color || "#999" }}
+                  >
+                    {v.ruleCode}
+                  </span>
+                  <span className={`severity-tag severity-tag-${v.severity}`}>
+                    {v.severity}
+                  </span>
+                  <span className="violation-note-wrap">
+                    {v.note ? (
+                      <span className="violation-note">{v.note}</span>
+                    ) : (
+                      <span className="violation-note-empty">—</span>
+                    )}
+                  </span>
+                  <span className="violation-time">
+                    {new Date(v.timestamp).toLocaleTimeString()}
+                  </span>
+                  <button
+                    className="violation-remove"
+                    onClick={() => removeViolation(v.id)}
+                    aria-label="Remove violation"
+                  >
+                    ✕
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+      </section>
 
       {modalOpen && (
         <ViolationModal

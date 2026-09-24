@@ -3,13 +3,14 @@ import "./InspectionPanel.css";
 
 export default function InspectionPanel({ teamId, inspection, onSetInspection }) {
   const [note, setNote] = useState(inspection?.note || "");
-  // Collapsed by default only when there's a passed inspection already on record.
-  const [expanded, setExpanded] = useState(!inspection?.passed);
+  // Collapsed whenever an inspection is already on record — pass or fail.
+  // Only stays expanded when the team hasn't been inspected yet.
+  const [expanded, setExpanded] = useState(!inspection);
 
   // If the underlying inspection changes (e.g. switching teams), reset collapse state.
   useEffect(() => {
-    setExpanded(!inspection?.passed);
-    setNote(inspection?.passed ? "" : inspection?.note || "");
+    setExpanded(!inspection);
+    setNote(inspection ? "" : "");
   }, [teamId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   function markPassed() {
@@ -20,13 +21,19 @@ export default function InspectionPanel({ teamId, inspection, onSetInspection })
 
   function markFailed() {
     onSetInspection(teamId, false, note);
+    setNote("");
+    setExpanded(false);
   }
 
-  if (inspection?.passed && !expanded) {
+  if (inspection && !expanded) {
     return (
       <div className="inspection-panel inspection-panel-collapsed">
-        <span className="inspection-current inspection-current-pass inspection-summary">
-          ✓ Passed Inspection
+        <span
+          className={`inspection-current inspection-summary ${
+            inspection.passed ? "inspection-current-pass" : "inspection-current-fail"
+          }`}
+        >
+          {inspection.passed ? "✓ Passed Inspection" : "✕ Failed Inspection"}
           <span className="inspection-current-time">
             {new Date(inspection.updatedAt).toLocaleString()}
           </span>
@@ -76,7 +83,7 @@ export default function InspectionPanel({ teamId, inspection, onSetInspection })
         </button>
       </div>
 
-      {inspection?.passed && (
+      {inspection && (
         <button className="inspection-cancel-btn" onClick={() => setExpanded(false)}>
           Cancel
         </button>
