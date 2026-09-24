@@ -1,0 +1,117 @@
+.inspection-panel {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 14px;
+  background: #fafafa;
+}
+
+.inspection-current {
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.inspection-current-pass {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.inspection-current-fail {
+  background: #fbe3e3;
+  color: #c02c2c;
+}
+
+.inspection-current-note {
+  font-weight: 400;
+  font-size: 0.85rem;
+  margin: 6px 0 0;
+}
+
+.inspection-current-time {
+  display: block;
+  font-weight: 400;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-top: 6px;
+}
+
+.inspection-note-input {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px;
+  box-sizing: border-box;
+  font-family: inherit;
+  margin-bottom: 10px;
+}
+
+.inspection-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.inspection-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #fff;
+}
+
+.inspection-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.inspection-btn-pass {
+  background: #15803d;
+}
+
+.inspection-btn-fail {
+  background: #e04b4b;
+}
+
+.inspection-panel-collapsed {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 14px;
+}
+
+.inspection-summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+
+.inspection-reinspect-btn {
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.inspection-reinspect-btn:hover {
+  background: #f5f5f5;
+}
+
+.inspection-cancel-btn {
+  width: 100%;
+  margin-top: 8px;
+  border: none;
+  background: transparent;
+  color: #999;
+  cursor: pointer;
+  font-size: 0.85rem;
+}

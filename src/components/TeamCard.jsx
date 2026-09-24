@@ -2,13 +2,25 @@ import { getRule } from "../utils/rules";
 import { groupByRule } from "../utils/violations";
 import "./TeamCard.css";
 
-export default function TeamCard({ team, violations, onClick, onRemove }) {
+export default function TeamCard({ team, violations, inspection, onClick, onRemove }) {
   const grouped = groupByRule(violations);
 
   return (
     <div className="team-card" onClick={onClick}>
       <div className="team-card-header">
-        <span className="team-number">{team.number}</span>
+        <span className="team-number">
+          {team.number}
+          {inspection && (
+            <span
+              className={`inspected-badge ${
+                inspection.passed ? "" : "inspected-badge-fail"
+              }`}
+              title={inspection.passed ? "Passed inspection" : "Failed inspection"}
+            >
+              {inspection.passed ? "✓ Inspected" : "✕ Failed Inspection"}
+            </span>
+          )}
+        </span>
         <button
           className="team-remove"
           onClick={(e) => {

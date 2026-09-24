@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import { useEventData } from "../context/EventDataContext";
+import InspectionPanel from "../components/InspectionPanel";
+
 import "./EventSetup.css";
 
 function EventSetup() {
@@ -81,10 +83,13 @@ function CreateEventPanel({ createEvent }) {
   );
 }
 
+
 function ActiveEventPanel({ event, teams, addTeam, removeTeam, clearEvent, navigate }) {
+  const { inspectionForTeam, setInspection } = useEventData();
   const [numberInput, setNumberInput] = useState("");
   const [nameInput, setNameInput] = useState("");
   const [confirmingClear, setConfirmingClear] = useState(false);
+  const [expandedTeamId, setExpandedTeamId] = useState(null);
 
   function handleAddTeam(e) {
     e.preventDefault();
@@ -130,14 +135,46 @@ function ActiveEventPanel({ event, teams, addTeam, removeTeam, clearEvent, navig
       <h3>Teams ({teams.length})</h3>
       <ul className="setup-team-list">
         {teams.length === 0 && <li className="setup-empty">No teams added yet.</li>}
-        {teams.map((t) => (
-          <li key={t.id} className="setup-team-row">
-            <span>
-              <strong>{t.number}</strong> {t.name}
-            </span>
-            <button onClick={() => removeTeam(t.id)}>Remove</button>
-          </li>
-        ))}
+        {teams.map((t) => {
+          const inspection = inspectionForTeam(t.id);
+          const isExpanded = expandedTeamId === t.id;
+          return (
+            <li key={t.id} className="setup-team-item">
+              <div className="setup-team-row">
+                <span>
+                  <strong>{t.number}</strong> {t.name}
+                  {inspection && (
+                    <span
+                      className={`inspected-badge ${
+                        inspection.passed ? "" : "inspected-badge-fail"
+                      }`}
+                    >
+                      {inspection.passed ? "✓ Inspected" : "✕ Failed"}
+                    </span>
+                  )}
+                </span>
+                <div className="setup-team-actions">
+                  <button
+                    className="setup-inline-btn"
+                    onClick={() => setExpandedTeamId(isExpanded ? null : t.id)}
+                  >
+                    {isExpanded ? "Hide Inspection" : "Inspect"}
+                  </button>
+                  <button onClick={() => removeTeam(t.id)}>Remove</button>
+                </div>
+              </div>
+              {isExpanded && (
+                <div className="setup-inspection-wrap">
+                  <InspectionPanel
+                    teamId={t.id}
+                    inspection={inspection}
+                    onSetInspection={setInspection}
+                  />
+                </div>
+              )}
+            </li>
+          );
+        })}
       </ul>
 
       <div className="setup-divider" />

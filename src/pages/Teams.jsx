@@ -5,6 +5,8 @@ import { getRule } from "../utils/rules";
 import Header from "../components/Header";
 import TeamCard from "../components/TeamCard";
 import ViolationModal from "../components/ViolationModal";
+import InspectionPanel from "../components/InspectionPanel";
+
 import "./Teams.css";
 
 export default function Teams() {
@@ -19,7 +21,7 @@ export default function Teams() {
 
 function TeamList() {
   const navigate = useNavigate();
-  const { teams, violationsForTeam } = useEventData();
+  const { teams, violationsForTeam, inspectionForTeam } = useEventData();
   const [search, setSearch] = useState("");
 
   const query = search.trim().toLowerCase();
@@ -52,6 +54,7 @@ function TeamList() {
               key={team.id}
               team={team}
               violations={violationsForTeam(team.id)}
+              inspection={inspectionForTeam(team.id)}
               onClick={() => navigate(`/teams/${team.number}`)}
               onRemove={() => {}}
             />
@@ -86,10 +89,15 @@ function groupByRule(violations) {
 
 function TeamDetail({ teamNumber }) {
   const navigate = useNavigate();
-  const { teams, violationsForTeam, addViolation, removeViolation } =
-    useEventData();
+  const {
+    teams,
+    violationsForTeam,
+    addViolation,
+    removeViolation,
+    inspectionForTeam,
+    setInspection,
+  } = useEventData();
   const [modalOpen, setModalOpen] = useState(false);
-  const [expandedRule, setExpandedRule] = useState(null);
 
   const team = teams.find((t) => t.number === teamNumber);
 
@@ -105,7 +113,6 @@ function TeamDetail({ teamNumber }) {
   const violations = violationsForTeam(team.id);
   const majorCount = violations.filter((v) => v.severity === "major").length;
   const minorCount = violations.filter((v) => v.severity === "minor").length;
-  const grouped = groupByRule(violations);
 
   function handleSelect(ruleCode, severity, note) {
     addViolation(team.id, ruleCode, severity, note);
@@ -127,77 +134,38 @@ function TeamDetail({ teamNumber }) {
         <span className="stat-pill stat-major">{majorCount} major</span>
       </div>
 
+      <h2>Inspection</h2>
+      <InspectionPanel
+        teamId={team.id}
+        inspection={inspectionForTeam(team.id)}
+        onSetInspection={setInspection}
+      />
+
+      <h2 style={{ marginTop: 20 }}>Violation Log</h2>
       <button className="assign-btn" onClick={() => setModalOpen(true)}>
         Assign Violation
       </button>
 
-      <h2>Violation Log</h2>
-      {grouped.length === 0 && <p>No violations recorded.</p>}
-
+      {violations.length === 0 && <p>No violations recorded.</p>}
       <ul className="violation-list">
-        {grouped.map((group) => {
-          const rule = getRule(group.ruleCode);
-          const isExpanded = expandedRule === group.ruleCode;
-          const groupMinor = group.entries.filter((e) => e.severity === "minor").length;
-          const groupMajor = group.entries.filter((e) => e.severity === "major").length;
-
+        {violations.map((v) => {
+          const rule = getRule(v.ruleCode);
           return (
-            <li key={group.ruleCode} className="violation-group">
-              <button
-                className="violation-group-header"
-                onClick={() =>
-                  setExpandedRule(isExpanded ? null : group.ruleCode)
-                }
+            <li key={v.id} className="violation-list-item">
+              <span
+                className="badge"
+                style={{ background: rule?.color || "#999" }}
               >
-                <span
-                  className="badge"
-                  style={{ background: rule?.color || "#999" }}
-                >
-                  {group.ruleCode}
-                </span>
-
-                {group.entries.length > 1 && (
-                  <span className="violation-count">×{group.entries.length}</span>
-                )}
-
-                <span className="violation-group-breakdown">
-                  {groupMinor > 0 && (
-                    <span className="severity-tag severity-tag-minor">
-                      {groupMinor} minor
-                    </span>
-                  )}
-                  {groupMajor > 0 && (
-                    <span className="severity-tag severity-tag-major">
-                      {groupMajor} major
-                    </span>
-                  )}
-                </span>
-
-                <span className="violation-time">
-                  latest {new Date(group.latestTimestamp).toLocaleTimeString()}
-                </span>
-
-                <span className="violation-expand-arrow">
-                  {isExpanded ? "▲" : "▼"}
-                </span>
-              </button>
-
-              {isExpanded && (
-                <ul className="violation-entry-list">
-                  {group.entries.map((v) => (
-                    <li key={v.id} className="violation-entry">
-                      <span className={`severity-tag severity-tag-${v.severity}`}>
-                        {v.severity}
-                      </span>
-                      {v.note && <span className="violation-note">{v.note}</span>}
-                      <span className="violation-time">
-                        {new Date(v.timestamp).toLocaleTimeString()}
-                      </span>
-                      <button onClick={() => removeViolation(v.id)}>✕</button>
-                    </li>
-                  ))}
-                </ul>
-              )}
+                {v.ruleCode}
+              </span>
+              <span className={`severity-tag severity-tag-${v.severity}`}>
+                {v.severity}
+              </span>
+              {v.note && <span className="violation-note">{v.note}</span>}
+              <span className="violation-time">
+                {new Date(v.timestamp).toLocaleTimeString()}
+              </span>
+              <button onClick={() => removeViolation(v.id)}>✕</button>
             </li>
           );
         })}

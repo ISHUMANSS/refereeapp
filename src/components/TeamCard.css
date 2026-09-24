@@ -73,3 +73,20 @@
   color: #999;
   align-self: center;
 }
+
+.inspected-badge {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #15803d;
+  background: #dcfce7;
+  padding: 2px 7px;
+  border-radius: 999px;
+  vertical-align: middle;
+}
+
+.inspected-badge-fail {
+  color: #c02c2c;
+  background: #fbe3e3;
+}

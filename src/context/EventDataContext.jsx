@@ -4,12 +4,15 @@ import { sampleTeams } from "../data/sampleData";
 const STORAGE_KEY = "roboref-event-data";
 const EventDataContext = createContext(null);
 
-const EMPTY_STATE = { event: null, teams: [], violations: [] };
+const EMPTY_STATE = { event: null, teams: [], violations: [], inspections: {} };
 
 function loadInitial() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) return JSON.parse(raw);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      return { ...EMPTY_STATE, ...parsed }; // backfill any missing keys, e.g. inspections
+    }
   } catch (e) {
     console.error("Failed to load saved data", e);
   }
@@ -29,11 +32,12 @@ export function EventDataProvider({ children }) {
       event: {
         id: crypto.randomUUID(),
         name: name.trim(),
-        source, // "local" | "api" (api not implemented yet)
+        source,
         createdAt: Date.now(),
       },
       teams: useSampleData ? sampleTeams : [],
       violations: [],
+      inspections: {},
     });
   }
 
@@ -101,6 +105,34 @@ export function EventDataProvider({ children }) {
     return Object.values(counts).sort((a, b) => b.count - a.count);
   }
 
+
+  // ---- Inspections ----
+  // data.inspections shape: { [teamId]: { passed: bool, note: string, updatedAt: number } }
+  function setInspection(teamId, passed, note = "") {
+    setData((prev) => ({
+      ...prev,
+      inspections: {
+        ...prev.inspections,
+        [teamId]: {
+          passed,
+          note: note.trim(),
+          updatedAt: Date.now(),
+        },
+      },
+    }));
+  }
+
+  function clearInspection(teamId) {
+    setData((prev) => {
+      const { [teamId]: _removed, ...rest } = prev.inspections;
+      return { ...prev, inspections: rest };
+    });
+  }
+
+  function inspectionForTeam(teamId) {
+    return data.inspections[teamId] || null;
+  }
+
   const value = {
     event: data.event,
     teams: data.teams,
@@ -113,6 +145,9 @@ export function EventDataProvider({ children }) {
     removeViolation,
     violationsForTeam,
     ruleCounts,
+    setInspection,
+    clearInspection,
+    inspectionForTeam,
   };
 
   return (
@@ -121,6 +156,8 @@ export function EventDataProvider({ children }) {
     </EventDataContext.Provider>
   );
 }
+
+  
 
 export function useEventData() {
   const ctx = useContext(EventDataContext);
