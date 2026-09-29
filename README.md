@@ -1,4 +1,4 @@
-# VEX Ref
+# Little Ref
 
 A lightweight, offline-first referee tool for VEX Robotics Competition events built for tablets and phones with no internet connection required during an event. Inspired by [referee.fyi](https://referee.fyi). Created with the help of AI.
 
