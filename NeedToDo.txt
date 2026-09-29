@@ -3,7 +3,7 @@ Need to do:
 Add:
 - An specific site colour
 - Overall UI changes and improvements
-- 
+- make it so that when they are not inspected it is grey
 
 Fix / change:
 - Phone screen based

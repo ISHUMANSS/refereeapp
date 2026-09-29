@@ -223,3 +223,8 @@
   background: #fbe3e3;
   color: #c02c2c;
 }
+
+.inspected-badge-pending {
+  color: #8a8a8a;
+  background: #f0f0f0;
+}

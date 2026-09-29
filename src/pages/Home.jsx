@@ -30,6 +30,38 @@ const SECTIONS = [
   },
 ];
 
+const HOW_TO_STEPS = [
+  {
+    title: "Create an event",
+    description:
+      "Go to Event Setup and start a local event, optionally with sample teams for testing.",
+    to: "/event/setup",
+  },
+  {
+    title: "Add your teams",
+    description: "Enter each team's number",
+    to: "/event/setup",
+  },
+  {
+    title: "Inspect robots",
+    description:
+      "From Event Setup or a team's page, mark each robot Pass or Fail with a note.",
+    to: "/teams",
+  },
+  {
+    title: "Assign violations during matches",
+    description:
+      "Open a team, tap Assign Violation, pick the rule and severity (minor or major).",
+    to: "/teams",
+  },
+  {
+    title: "Review patterns",
+    description:
+      "Check Anomalies to see which rules are broken most across the event.",
+    to: "/anomalies",
+  },
+];
+
 function Home() {
   const { teams, violations } = useEventData();
 
@@ -52,6 +84,8 @@ function Home() {
         </div>
       </div>
 
+      
+
       <div className="home-grid">
         {SECTIONS.map((section) =>
           section.disabled ? (
@@ -72,6 +106,28 @@ function Home() {
           )
         )}
       </div>
+
+      <section className="how-to">
+        <h2 className="how-to-title">How to use this app</h2>
+        <ol className="how-to-list">
+          {HOW_TO_STEPS.map((step, i) => (
+            <li key={step.title} className="how-to-item">
+              <span className="how-to-number">{i + 1}</span>
+              <div className="how-to-text">
+                <p className="how-to-step-title">{step.title}</p>
+                <p className="how-to-step-desc">{step.description}</p>
+              </div>
+              <Link to={step.to} className="how-to-link">
+                Go →
+              </Link>
+            </li>
+          ))}
+        </ol>
+        <p className="how-to-note">
+          Everything is stored on this device only no internet connection
+          needed during an event.
+        </p>
+      </section>
     </main>
   );
 }

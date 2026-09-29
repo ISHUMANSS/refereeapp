@@ -65,7 +65,7 @@ export default function InspectionPanel({ teamId, inspection, onSetInspection })
       <textarea
         className="inspection-note-input"
         rows={2}
-        placeholder="Why did it fail, or anything worth noting…"
+        placeholder="Why did it fail..."
         value={note}
         onChange={(e) => setNote(e.target.value)}
       />
