@@ -11,7 +11,7 @@
 .home-stats {
   display: flex;
   gap: 24px;
-  margin: 20px 0 28px;
+  margin: 20px 0 40px; /* was 28px — more breathing room before How To */
 }
 
 .home-stat {
@@ -32,8 +32,10 @@
 
 .home-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 260px));
+  justify-content: center; /* centers the whole group instead of stretching to fill the row */
   gap: 14px;
+  margin-bottom: 36px; /* was 28px — matches the new gap above it */
 }
 
 .home-card {
@@ -96,7 +98,7 @@
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 18px 18px 14px;
-  margin-bottom: 28px;
+  
   background: var(--bg-muted);
 }
 

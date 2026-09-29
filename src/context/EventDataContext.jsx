@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { sampleTeams } from "../data/sampleData";
 
-const STORAGE_KEY = "roboref-event-data";
+const STORAGE_KEY = "event-data";
 const EventDataContext = createContext(null);
 
 const EMPTY_STATE = { event: null, teams: [], violations: [], inspections: {} };

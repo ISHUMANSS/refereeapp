@@ -2,26 +2,13 @@ Need to do:
 
 
 Add:
-- An specific site colour
-main: #C2AFF0
-complemently: #C3B8DB
-other: #845CE0
-other: #798C4D
-other: #A6A3AD
-
-
-
-
-
-
-- Overall UI changes and improvements
-- make it so that when they are not inspected it is grey
+- teams page ui improvement
 
 Fix / change:
 - Phone screen based
-- Dark mode and light mode
 
 
 
 Want to add:
 - Vex events API (will allow matches and loading teams for the event)
+- matches also has the calculator? so you never need to leave the app

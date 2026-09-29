@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { to: "/matches", label: "Matches", disabled: true },
   { to: "/teams", label: "Teams", disabled: false },
   { to: "/anomalies", label: "Anomalies", disabled: false },
-  { to: "/event/setup", label: "Event Setup", disabled: false },
+  { to: "/event", label: "Event Setup", disabled: false },
 ];
 
 function Header() {
@@ -26,7 +26,7 @@ function Header() {
 
         <div className="header-right">
           <ThemeToggle />
-          <span className="offline-status">● Offline</span>
+          <span className="offline-status">● Local</span>
         </div>
       </div>
 

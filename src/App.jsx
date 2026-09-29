@@ -16,7 +16,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/event/setup" element={<EventSetup />} />
+            <Route path="/event/" element={<EventSetup />} />
             <Route path="/matches" element={<Matches />} />
             <Route path="/matches/:matchId" element={<Match />} />
             <Route path="/anomalies" element={<Anomalies />} />
