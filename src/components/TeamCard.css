@@ -17,7 +17,7 @@
   transform: scale(0.985);
 }
 
-/* Status stripe — read the team's state before reading anything else */
+/* status stripe*/
 .team-card.status-clean {
   border-left-color: var(--status-success-strong);
 }

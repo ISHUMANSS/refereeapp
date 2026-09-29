@@ -16,7 +16,7 @@ export function ThemeProvider({ children }) {
   );
   const [systemTheme, setSystemTheme] = useState(getSystemTheme);
 
-  // Track the OS-level preference live, so "system" mode updates without reload
+  //system mode updates without reload as it changes in the os
   useEffect(() => {
     if (!window.matchMedia) return;
     const mq = window.matchMedia("(prefers-color-scheme: dark)");
@@ -27,7 +27,7 @@ export function ThemeProvider({ children }) {
 
   const resolvedTheme = mode === "system" ? systemTheme : mode;
 
-  // Apply to <html data-theme="..."> so CSS can key off it
+  //apply to <html data-theme="..."> so CSS can key off it
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", resolvedTheme);
   }, [resolvedTheme]);

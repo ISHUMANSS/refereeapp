@@ -69,9 +69,9 @@ function Home() {
     <main>
       <Header />
       <div className="home">
-        <h1>VEX Ref</h1>
+        <h1>Little Ref</h1>
         <p className="home-subtitle">
-          Referee tools for VEX Robotics competitions.
+          Created to help referees keep track of voliations at local events. Please refer to the game manual actual rules
         </p>
 
         <div className="home-stats">

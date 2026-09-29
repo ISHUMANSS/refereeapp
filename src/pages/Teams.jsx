@@ -74,8 +74,8 @@ function TeamList() {
     </div>
   );
 }
-// Groups a team's violations by ruleCode, most-recently-broken rule first,
-// and within each group, most recent entry first.
+//groups a team's violations by ruleCode, most-recently-broken rule first,
+//within each group, most recent entry first.
 function groupByRule(violations) {
   const groups = {};
   violations.forEach((v) => {

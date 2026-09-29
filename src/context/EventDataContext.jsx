@@ -11,7 +11,7 @@ function loadInitial() {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) {
       const parsed = JSON.parse(raw);
-      return { ...EMPTY_STATE, ...parsed }; // backfill any missing keys, e.g. inspections
+      return { ...EMPTY_STATE, ...parsed }; //backfill any missing keys, e.g. inspections
     }
   } catch (e) {
     console.error("Failed to load saved data", e);
@@ -92,7 +92,7 @@ export function EventDataProvider({ children }) {
       .sort((a, b) => b.timestamp - a.timestamp);
   }
 
-  // Counts per rule code across the whole event, sorted most-broken first
+  //counts per rule code across the whole event, sorted most-broken first
   function ruleCounts() {
     const counts = {};
     data.violations.forEach((v) => {

@@ -3,7 +3,7 @@ import "./InspectionPanel.css";
 
 export default function InspectionPanel({ teamId, inspection, onSetInspection }) {
   const [note, setNote] = useState(inspection?.note || "");
-  // Collapsed whenever an inspection is already on record — pass or fail.
+  // Collapsed whenever an inspection is already on record  pass or fail.
   // Only stays expanded when the team hasn't been inspected yet.
   const [expanded, setExpanded] = useState(!inspection);
 

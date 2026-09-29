@@ -128,7 +128,7 @@ export default function ViolationModal({ team, onSelect, onClose }) {
             </div>
           ))}
 
-          {/* Other / uncodified — always visible, not filtered by search */}
+          {/*for all other rules not included in the list*/}
           {otherCategory && (
             <div className="rule-category">
               <div
