@@ -1,11 +1,10 @@
 .home {
   padding: 24px 20px;
-  /*max-width: 900px;*/
   margin: 0 auto;
 }
 
 .home-subtitle {
-  color: #666;
+  color: var(--text-secondary);
   margin-top: -8px;
 }
 
@@ -23,12 +22,12 @@
 .home-stat-value {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #2563eb;
+  color: var(--color-primary);
 }
 
 .home-stat-label {
   font-size: 0.8rem;
-  color: #999;
+  color: var(--text-faint);
 }
 
 .home-grid {
@@ -39,7 +38,8 @@
 
 .home-card {
   display: block;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
   border-radius: 10px;
   padding: 16px;
   text-decoration: none;
@@ -48,22 +48,22 @@
 }
 
 .home-card:hover {
-  border-color: #2563eb;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-color: var(--color-primary);
+  box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .home-card h3 {
   margin: 0 0 6px;
-  color: #2563eb;
+  color: var(--color-primary);
 }
 
 .home-card p {
   margin: 0;
-  color: #666;
+  color: var(--text-secondary);
   font-size: 0.9rem;
 }
 
-/*disabled*/
+/* disabled */
 .home-card-disabled {
   cursor: not-allowed;
   opacity: 0.55;
@@ -71,12 +71,12 @@
 }
 
 .home-card-disabled:hover {
-  border-color: #e5e5e5;
+  border-color: var(--border);
   box-shadow: none;
 }
 
 .home-card-disabled h3 {
-  color: #888;
+  color: var(--text-faint);
 }
 
 .home-card-badge {
@@ -86,18 +86,18 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  color: #999;
-  background: #f0f0f0;
+  color: var(--text-faint);
+  background: var(--bg-muted);
   padding: 2px 8px;
   border-radius: 999px;
 }
 
 .how-to {
-  border: 1px solid #ececec;
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 18px 18px 14px;
   margin-bottom: 28px;
-  background: #fafafa;
+  background: var(--bg-muted);
 }
 
 .how-to-title {
@@ -105,7 +105,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: #999;
+  color: var(--text-faint);
   margin: 0 0 14px;
 }
 
@@ -122,8 +122,8 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  background: #fff;
-  border: 1px solid #eee;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 10px 12px;
 }
@@ -133,8 +133,8 @@
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: #2563eb;
-  color: #fff;
+  background: var(--color-primary);
+  color: var(--text-on-primary);
   font-weight: 700;
   font-size: 0.85rem;
   display: flex;
@@ -151,18 +151,19 @@
   margin: 0;
   font-weight: 600;
   font-size: 0.9rem;
+  color: var(--text-primary);
 }
 
 .how-to-step-desc {
   margin: 2px 0 0;
-  color: #777;
+  color: var(--text-secondary);
   font-size: 0.82rem;
   line-height: 1.4;
 }
 
 .how-to-link {
   flex-shrink: 0;
-  color: #2563eb;
+  color: var(--color-primary);
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 600;
@@ -174,7 +175,7 @@
 }
 
 .how-to-note {
-  color: #999;
+  color: var(--text-faint);
   font-size: 0.78rem;
   margin: 14px 2px 0;
 }

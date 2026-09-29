@@ -1,6 +1,6 @@
 .header {
-  background: #fff;
-  border-bottom: 1px solid #e5e5e5;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
   padding: 14px 20px 0;
 }
 
@@ -11,22 +11,34 @@
   padding-bottom: 12px;
 }
 
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .event-label {
   display: block;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #999;
+  color: var(--text-faint);
 }
 
 .header-top h2 {
   margin: 2px 0 0;
   font-size: 1.15rem;
+  color: var(--text-primary);
+}
+
+.event-name-empty {
+  color: var(--text-faint);
+  font-style: italic;
 }
 
 .offline-status {
   font-size: 0.85rem;
-  color: #e04b4b;
+  color: var(--status-danger-text);
   font-weight: 600;
 }
 
@@ -39,7 +51,7 @@
 .nav-link {
   padding: 10px 14px;
   text-decoration: none;
-  color: #555;
+  color: var(--text-secondary);
   font-size: 0.9rem;
   font-weight: 500;
   border-bottom: 2px solid transparent;
@@ -47,24 +59,19 @@
 }
 
 .nav-link:hover {
-  color: #2563eb;
+  color: var(--color-primary);
 }
 
 .nav-link-active {
-  color: #2563eb;
-  border-bottom-color: #2563eb;
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
 }
 
 .nav-link-disabled {
-  color: #bbb;
+  color: var(--text-faint);
   cursor: not-allowed;
 }
 
 .nav-link-disabled:hover {
-  color: #bbb;
-}
-
-.event-name-empty {
-  color: #999;
-  font-style: italic;
+  color: var(--text-faint);
 }

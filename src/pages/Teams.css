@@ -1,15 +1,12 @@
-/* ---------- Shared page ---------- */
-
 .teams-page {
   padding: 20px;
-  
   margin: 0 auto;
 }
 
 .back-link {
   background: none;
   border: none;
-  color: #2563eb;
+  color: var(--color-primary);
   cursor: pointer;
   padding: 0;
   margin-bottom: 16px;
@@ -19,14 +16,16 @@
 .team-search {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-strong);
   border-radius: 6px;
   box-sizing: border-box;
   margin-bottom: 16px;
+  background: var(--bg-surface);
+  color: var(--text-primary);
 }
 
 .teams-empty {
-  color: #999;
+  color: var(--text-faint);
 }
 
 /* ---------- Detail header ---------- */
@@ -47,11 +46,11 @@
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.01em;
   margin: 0;
-  color: #1a1a1a;
+  color: var(--text-primary);
 }
 
 .detail-team-name {
-  color: #777;
+  color: var(--text-secondary);
   margin: 2px 0 0;
   font-size: 0.95rem;
 }
@@ -71,24 +70,24 @@
 }
 
 .stat-total {
-  background: #f0f0f0;
-  color: #555;
+  background: var(--bg-muted);
+  color: var(--text-secondary);
 }
 
 .stat-minor {
-  background: #fdf0dc;
-  color: #b26a00;
+  background: var(--status-warning-bg);
+  color: var(--status-warning-text);
 }
 
 .stat-major {
-  background: #fbe3e3;
-  color: #c02c2c;
+  background: var(--status-danger-bg);
+  color: var(--status-danger-text);
 }
 
 /* ---------- Sections ---------- */
 
 .detail-section {
-  border-top: 1px solid #ececec;
+  border-top: 1px solid var(--border);
   padding-top: 18px;
   margin-bottom: 24px;
 }
@@ -98,7 +97,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: #999;
+  color: var(--text-faint);
   margin: 0 0 12px;
 }
 
@@ -115,15 +114,15 @@
 }
 
 .detail-empty {
-  color: #999;
+  color: var(--text-faint);
   font-size: 0.9rem;
 }
 
 .assign-btn {
   padding: 8px 16px;
   border: none;
-  background: #2563eb;
-  color: #fff;
+  background: var(--color-primary);
+  color: var(--text-on-primary);
   border-radius: 6px;
   cursor: pointer;
   font-size: 0.85rem;
@@ -132,7 +131,7 @@
 }
 
 .assign-btn:hover {
-  background: #1d4ed8;
+  background: var(--color-primary-hover);
 }
 
 /* ---------- Violation list ---------- */
@@ -151,7 +150,8 @@
   grid-template-columns: auto auto 1fr auto auto;
   align-items: center;
   gap: 10px;
-  border: 1px solid #eee;
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
   border-radius: 8px;
   padding: 9px 12px;
   font-size: 0.85rem;
@@ -164,16 +164,16 @@
 }
 
 .violation-note {
-  color: #666;
+  color: var(--text-secondary);
   font-style: italic;
 }
 
 .violation-note-empty {
-  color: #ddd;
+  color: var(--border-strong);
 }
 
 .violation-time {
-  color: #999;
+  color: var(--text-faint);
   font-size: 0.78rem;
   white-space: nowrap;
 }
@@ -181,7 +181,7 @@
 .violation-remove {
   border: none;
   background: transparent;
-  color: #ccc;
+  color: var(--text-faint);
   cursor: pointer;
   font-size: 0.9rem;
   padding: 2px 4px;
@@ -189,7 +189,7 @@
 }
 
 .violation-remove:hover {
-  color: #e04b4b;
+  color: var(--status-danger-text);
 }
 
 /* ---------- Badges & tags (shared with TeamCard) ---------- */
@@ -215,16 +215,16 @@
 }
 
 .severity-tag-minor {
-  background: #fdf0dc;
-  color: #b26a00;
+  background: var(--status-warning-bg);
+  color: var(--status-warning-text);
 }
 
 .severity-tag-major {
-  background: #fbe3e3;
-  color: #c02c2c;
+  background: var(--status-danger-bg);
+  color: var(--status-danger-text);
 }
 
 .inspected-badge-pending {
-  color: #8a8a8a;
-  background: #f0f0f0;
+  color: var(--text-faint);
+  background: var(--bg-muted);
 }

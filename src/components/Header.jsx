@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useEventData } from "../context/EventDataContext";
+import ThemeToggle from "./ThemeToggle";
 import "./Header.css";
 
 const NAV_LINKS = [
@@ -22,9 +23,10 @@ function Header() {
             {event ? event.name : "No Event Selected"}
           </h2>
         </div>
-        {/*will show if a local event or a online event is currently sellected*/}
+
         <div className="header-right">
-          <span className="offline-status">● Local</span>
+          <ThemeToggle />
+          <span className="offline-status">● Offline</span>
         </div>
       </div>
 

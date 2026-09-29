@@ -1,0 +1,93 @@
+:root {
+  color-scheme: light;
+
+  /* ---- Brand ---- */
+  --color-primary: #845CE0;
+  --color-primary-hover: #7248D1;
+  --color-secondary: #C2AFF0;
+  --color-tertiary: #C3B8DB;
+  --color-neutral: #A6A3AD;
+  --color-accent: #798C4D;
+
+  /* ---- Surfaces ---- */
+  --bg-page: #FAF9FC;
+  --bg-surface: #FFFFFF;
+  --bg-muted: #F1EEF7;
+  --border: #E6E1F0;
+  --border-strong: #D6CFE8;
+  --shadow-color: rgba(80, 60, 120, 0.1);
+  --overlay: rgba(30, 20, 45, 0.5);
+
+  /* ---- Text ---- */
+  --text-primary: #221E2C;
+  --text-secondary: #6B6575;
+  --text-faint: #A6A3AD;
+  --text-on-primary: #FFFFFF;
+
+  /* ---- Status (semantic — stay red/amber/green in both themes) ---- */
+  --status-success-bg: #DCFCE7;
+  --status-success-text: #15803D;
+  --status-success-strong: #22C55E;
+
+  --status-warning-bg: #FDF0DC;
+  --status-warning-text: #B26A00;
+  --status-warning-strong: #F5A623;
+
+  --status-danger-bg: #FBE3E3;
+  --status-danger-text: #C02C2C;
+  --status-danger-strong: #DC2626;
+  --status-danger-border: #7F1D1D;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-primary: #A98DF0;
+  --color-primary-hover: #B9A3F5;
+  --color-secondary: #4B3E77;
+  --color-tertiary: #4A4360;
+  --color-neutral: #8B87A0;
+  --color-accent: #9DB076;
+
+  --bg-page: #17151F;
+  --bg-surface: #201D2B;
+  --bg-muted: #292536;
+  --border: #34303F;
+  --border-strong: #423C52;
+  --shadow-color: rgba(0, 0, 0, 0.45);
+  --overlay: rgba(0, 0, 0, 0.6);
+
+  --text-primary: #F1EEF7;
+  --text-secondary: #B7B2C6;
+  --text-faint: #8B87A0;
+  --text-on-primary: #17151F;
+
+  --status-success-bg: #16311F;
+  --status-success-text: #6FE39B;
+  --status-success-strong: #34D399;
+
+  --status-warning-bg: #3A2C0F;
+  --status-warning-text: #F0C069;
+  --status-warning-strong: #F5A623;
+
+  --status-danger-bg: #3A1616;
+  --status-danger-text: #F19999;
+  --status-danger-strong: #EF4444;
+  --status-danger-border: #F19999;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+a {
+  color: var(--color-primary);
+}

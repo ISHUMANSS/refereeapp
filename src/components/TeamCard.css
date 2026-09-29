@@ -1,16 +1,16 @@
 .team-card {
   position: relative;
-  border: 1px solid #e8e8e8;
-  border-left: 4px solid #ccc;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--border-strong);
   border-radius: 8px;
   padding: 14px 16px;
   cursor: pointer;
-  background: #fff;
+  background: var(--bg-surface);
   transition: border-color 0.12s, transform 0.08s;
 }
 
 .team-card:hover {
-  border-color: #d5d5d5;
+  border-color: var(--border-strong);
 }
 
 .team-card:active {
@@ -19,15 +19,15 @@
 
 /* Status stripe — read the team's state before reading anything else */
 .team-card.status-clean {
-  border-left-color: #22c55e;
+  border-left-color: var(--status-success-strong);
 }
 
 .team-card.status-warn {
-  border-left-color: #f5a623;
+  border-left-color: var(--status-warning-strong);
 }
 
 .team-card.status-alert {
-  border-left-color: #dc2626;
+  border-left-color: var(--status-danger-strong);
 }
 
 .team-card-header {
@@ -44,11 +44,11 @@
   font-size: 1.05rem;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.01em;
-  color: #1a1a1a;
+  color: var(--text-primary);
 }
 
 .team-name {
-  color: #6b6b6b;
+  color: var(--text-secondary);
   font-size: 0.85rem;
   margin-bottom: 10px;
   overflow: hidden;
@@ -76,14 +76,14 @@
 }
 
 .badge-clean {
-  color: #b5b5b5;
+  color: var(--text-faint);
   font-size: 0.78rem;
 }
 
 .badge-major {
-  border-color: #7f1d1d;
+  border-color: var(--status-danger-border);
   font-weight: 700;
-  padding: 0px 6px; /* compensate thicker border so size stays consistent */
+  padding: 0px 6px;
 }
 
 .badge-count {
@@ -94,21 +94,26 @@
 
 .badge-more {
   font-size: 0.72rem;
-  color: #b5b5b5;
+  color: var(--text-faint);
   align-self: center;
 }
 
 .inspected-badge {
   font-size: 0.68rem;
   font-weight: 700;
-  color: #15803d;
-  background: #ecfdf3;
+  color: var(--status-success-text);
+  background: var(--status-success-bg);
   padding: 2px 7px;
   border-radius: 5px;
   white-space: nowrap;
 }
 
 .inspected-badge-fail {
-  color: #b91c1c;
-  background: #fef2f2;
+  color: var(--status-danger-text);
+  background: var(--status-danger-bg);
+}
+
+.inspected-badge-pending {
+  color: var(--text-faint);
+  background: var(--bg-muted);
 }

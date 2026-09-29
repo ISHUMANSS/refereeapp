@@ -1,8 +1,8 @@
 .inspection-panel {
-  border: 1px solid #eee;
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 14px;
-  background: #fafafa;
+  background: var(--bg-muted);
 }
 
 .inspection-current {
@@ -14,13 +14,13 @@
 }
 
 .inspection-current-pass {
-  background: #dcfce7;
-  color: #15803d;
+  background: var(--status-success-bg);
+  color: var(--status-success-text);
 }
 
 .inspection-current-fail {
-  background: #fbe3e3;
-  color: #c02c2c;
+  background: var(--status-danger-bg);
+  color: var(--status-danger-text);
 }
 
 .inspection-current-note {
@@ -39,12 +39,14 @@
 
 .inspection-note-input {
   width: 100%;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-strong);
   border-radius: 6px;
   padding: 8px;
   box-sizing: border-box;
   font-family: inherit;
   margin-bottom: 10px;
+  background: var(--bg-surface);
+  color: var(--text-primary);
 }
 
 .inspection-buttons {
@@ -68,11 +70,11 @@
 }
 
 .inspection-btn-pass {
-  background: #15803d;
+  background: var(--status-success-strong);
 }
 
 .inspection-btn-fail {
-  background: #e04b4b;
+  background: var(--status-danger-strong);
 }
 
 .inspection-panel-collapsed {
@@ -93,8 +95,9 @@
 }
 
 .inspection-reinspect-btn {
-  border: 1px solid #ccc;
-  background: #fff;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-surface);
+  color: var(--text-primary);
   border-radius: 6px;
   padding: 6px 12px;
   font-size: 0.8rem;
@@ -103,7 +106,7 @@
 }
 
 .inspection-reinspect-btn:hover {
-  background: #f5f5f5;
+  background: var(--bg-muted);
 }
 
 .inspection-cancel-btn {
@@ -111,7 +114,7 @@
   margin-top: 8px;
   border: none;
   background: transparent;
-  color: #999;
+  color: var(--text-faint);
   cursor: pointer;
   font-size: 0.85rem;
 }
